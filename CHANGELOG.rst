@@ -42,6 +42,8 @@ Changed
 
 * Arrange Horiszontal/Vertical now also sort by filename instead of
   the previous seemingly random behaviour
+* Updated Python version support to 3.9-3.14 and relaxed dependency
+  version constraints to allow installation on newer Python versions.
 
 
 0.3.3 - 2024-05-05

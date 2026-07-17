@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
-        pyqt-version: ["6.7.0"]
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -28,7 +27,6 @@ jobs:
           mv beeref_inst/beeref beeref
           rm -r beeref_inst
           pip install -r requirements/test.txt
-          pip install pyQt6==${{ matrix.pyqt-version }} pyQt6-Qt6==${{ matrix.pyqt-version }} --upgrade
       - name: Run Unittests with pytest
         run: |
           xvfb-run --auto-servernum --server-num=1 --server-args="-screen 1 1920x1200x24 -ac +extension GLX" pytest --cov --cov-report=xml
